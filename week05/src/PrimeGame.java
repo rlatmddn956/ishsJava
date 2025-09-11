@@ -1,35 +1,29 @@
+import java.util.Scanner;
+
 public class PrimeGame {
-
-    import java.util.Scanner;
-
-    public static boolean(int n) {
-        int number = sc.nextInt();
-
-        if(number <= 1) {
+    // 숫자 하나를 넘겨 받아서 해당 수가 소수면 true 리턴, 소수가 false
+    public static boolean isPrime(int n){
+        if(n <= 1){
             return false;
-
         }else{
-        for(int i=2; i<=Math.sqrt(number); i=i+1){
-            if(number % i == 0) {
-                return false;
+            for(int i=2; i<=Math.sqrt(n); i=i+1){
+                if(n % i == 0){
+                    return false;
+                }
             }
         }
         return true;
     }
 
-    public class PrimeGame {
-        public static void main(String[] args) {
-            //System.out.println(Math.sqrt(25.0));
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int number = sc.nextInt();
 
-            Scanner sc = new Scanner(System.in);
-            boolean isPrime = true;
-
-            if(isPrime(number)){
-                System.out.println(number + " is a prime number~");
-            }else{
-                System.out.println(number + " is NOT prime number~!");
-            }
+        if(isPrime(number)){
+            System.out.println(number + " is a prime number~");
+        }else{
+            System.out.println(number + " is NOT prime number!");
         }
     }
-
 }
+
