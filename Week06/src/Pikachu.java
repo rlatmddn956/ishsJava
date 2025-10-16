@@ -6,8 +6,10 @@ public class Pikachu extends Pokemon{
 
     @Override
     public void attack(Pokemon target) {
+        int damage = getAttackPower() + 5;
       //  System.out.println(getName() + " -> " + target.getName()); // name is private
-        System.out.println(name + " -> " + target.getName() + "에게 '전기충격' 사용"); //name is protected
+        System.out.println(name + " -> " + target.getName() + "에게 '전기충격' 사용! (데미지: " + damage + ")"); //name is protected
+        target.setHp(target.getHp()-damage);;
     }
 }
 
