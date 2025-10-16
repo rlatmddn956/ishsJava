@@ -12,9 +12,21 @@ public abstract class Pokemon {
     public String getName(){ return name; }
     public int getHp(){ return hp; }
     public int getAttackPower() { return attackPower; }
-    public void setHp(int hp) { this.hp = hp; }
+
+    public void setHp(int hp) {
+        this.hp = hp;
+    }
 
     public abstract void attack(Pokemon target);
+
+    public void recieveDamage(int damage){
+        hp = hp-damage;
+        if(hp < 0) hp = 0;
+    }
+
+    public boolean isFainted(){
+        return hp <= 0;
+    }
 
     @Override
     public String toString() {
