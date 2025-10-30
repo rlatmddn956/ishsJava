@@ -24,13 +24,8 @@ public abstract class Pokemon {
         if(hp < 0) hp = 0;
     }
 
-    public boolean isFainted(){
-        return hp <= 0;
-    }
+    public boolean isFainted(){return hp <= 0;}
 
     @Override
-    public String toString() {
-        return name + " (HP : " + hp + ", AttackPower : " + attackPower + ")" ;
-
-    }
+    public String toString() {return name + " (HP : " + hp + ", AttackPower : " + attackPower + ")" ;}
 }

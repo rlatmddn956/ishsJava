@@ -27,20 +27,5 @@ public class GameDemo {
             turn++;
         }
         System.out.println("배틀 종료!");
-
-
-
-
-//        Pikachu myPikachu = new Pikachu(100, 27);
-//        Pikachu yourPikachu = new Pikachu(100, 28);
-//        Squirtle enemySquirtle = new Squirtle(120, 21);
-//        System.out.println("Game Start~");
-//        myPikachu.attack(enemySquirtle);
-//
-//        for (int i=0;i<5;i++)
-//            enemySquirtle.attack(myPikachu);
-//
-//        System.out.println(enemySquirtle);
-//        System.out.println(myPikachu);
     }
 }
