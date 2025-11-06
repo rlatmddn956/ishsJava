@@ -25,8 +25,6 @@ public class GameDemo {
                 new Skill("Flare Blitz", 120)
         };
 
-
-
         Pokemon playerPokemon = null;
         Scanner scanner = new Scanner(System.in);
 
@@ -34,13 +32,13 @@ public class GameDemo {
                 try {
                     System.out.print("플레이어 포켓몬스터 선택\n1) 피카츄  2) 꼬부기  3) 리자몽 : ");
                     int number = scanner.nextInt();  // string
-                    if (number - 1 == 0) {
+                    if (number-1 == 0) {
                         playerPokemon = new Pikachu(100, 27, new NoFly(), pikachuSkills);
                         break;
-                    } else if (number - 1 == 1) {
+                    } else if (number-1 == 1) {
                         playerPokemon = new Squirtle(120, 21, new NoFly(), squirtleSkills);
                         break;
-                    } else if (number - 1 == 2) {
+                    } else if (number-1 == 2) {
                         playerPokemon = new Charizard(200, 40, new Wings(), charizardSkills);
                         break;
                     } else
@@ -51,8 +49,6 @@ public class GameDemo {
                     scanner.nextLine();  // 버퍼에 남아있는 값(여기선 문자열) 제거
             }
         }
-
-
 
         int randomNumber = (int)(Math.random() * 3); // 0 ~ 2
         Pokemon enemyPokemon = null;
@@ -76,28 +72,11 @@ public class GameDemo {
             int skillNumber = scanner.nextInt() - 1;
 
             playerPokemon.attack(enemyPokemon, skillNumber);
+            enemyPokemon.attack(playerPokemon, (int)(Math.random() * 3));
 
-            if(enemyPokemon.isFainted() ||  playerPokemon.isFainted());
-            break;
+            if (enemyPokemon.isFainted() || playerPokemon.isFainted())
+                break;
         }
-
-
-//        int turn = 1;
-//        while(!p1.isFainted() && !c1.isFainted()){
-//            System.out.println("턴 " + turn + "시작");
-//            p1.attack(c1);
-//            if (c1.isFainted()){
-//                System.out.println(c1.getName() + "이(가) 기절했습니다! " + p1.getName() + " 승리!");
-//                break;
-//            }
-//            c1.attack(p1);
-//            if (c1.isFainted()) {
-//                System.out.println(c1.getName() + "이(가) 기절했습니다! " + p1.getName() + " 승리!");
-//                break;
-//            }
-//            System.out.println("============");
-//            turn++;
-//        }
-//        System.out.println("배틀 종료!");
+        System.out.println("배틀 종료");
     }
 }

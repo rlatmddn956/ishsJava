@@ -19,32 +19,42 @@ public abstract class Pokemon {
         this.skills = skills;
     }
 
-    public String getName(){ return name; }
-    public int getHp(){ return hp; }
-    public int getAttackPower() { return attackPower; }
+    public String getName(){
+        return name;
+    }
+    public int getHp(){
+        return hp;
+    }
+    public int getAttackPower() {
+        return attackPower;
+    }
 
     public void setHp(int hp) {
         this.hp = hp;
     }
 
     public void setFlyingTool(Flyable flyingTool) {
+
         this.flyingTool = flyingTool;
     }
 
     public void performFlyable(){
+
         this.flyingTool.fly(this);
     }
 
 
     public abstract void attack(Pokemon target, int choice);
-
     public void recieveDamage(int damage){
         hp = hp-damage;
         if(hp < 0) hp = 0;
     }
 
-    public boolean isFainted(){return hp <= 0;}
+    public boolean isFainted(){
+        return hp <= 0;
+    }
 
     @Override
-    public String toString() {return name + " (HP : " + hp + ", AttackPower : " + attackPower + ")" ;}
+    public String toString() {return name + " (HP : " + hp + ", AttackPower : " + attackPower + ")" ;
+    }
 }
