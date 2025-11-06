@@ -2,28 +2,27 @@ import fly.NoFly;
 import fly.Wings;
 import pokemons.*;
 
+import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class GameDemo {
     public static void main(String[] args) {
-        Skill[] pikachuSkills = {
-                new Skill("nuzzie", 20),
-                new Skill("ThunderShock", 40),
-                new Skill("Quick Attack", 40)
-        };
+        ArrayList<Skill> pikachuSkills = new ArrayList<>();
+        pikachuSkills.add(new Skill("nuzzle", 20));
+        pikachuSkills.add(new Skill("ThunderShock", 40));
+        pikachuSkills.add(new Skill("Quick Attack", 40));
 
-        Skill[] squirtleSkills = {
-                new Skill("Tackle", 40),
-                new Skill("Water Gun", 40),
-                new Skill("Rapid Spin", 50)
-        };
+        ArrayList<Skill> squirtleSkills = new ArrayList<>();
+        squirtleSkills.add(new Skill("Tackle", 40));
+        squirtleSkills.add(new Skill("Water Gun", 40));
+        squirtleSkills.add(new Skill("Rapid Spin", 50));
 
-        Skill[] charizardSkills = {
-                new Skill("Scratch", 40),
-                new Skill("Dragon Breath", 60),
-                new Skill("Flare Blitz", 120)
-        };
+        ArrayList<Skill> charizardSkills = new ArrayList<>();
+        charizardSkills.add(new Skill("Scratch", 40));
+        charizardSkills.add(new Skill("Dragon Breath", 60));
+        charizardSkills.add(new Skill("Flare Blitz", 120));
+
 
         Pokemon playerPokemon = null;
         Scanner scanner = new Scanner(System.in);
@@ -54,18 +53,19 @@ public class GameDemo {
         Pokemon enemyPokemon = null;
         System.out.println("야생의 포켓몬스터 나타났습니다");
         if(randomNumber == 0)
-            playerPokemon = new Pikachu(100, 27, new NoFly(), pikachuSkills);
+            enemyPokemon = new Pikachu(100, 27, new NoFly(), pikachuSkills);
         else if(randomNumber == 1)
-            playerPokemon = new Squirtle(120, 21, new NoFly(), squirtleSkills);
+            enemyPokemon = new Squirtle(120, 21, new NoFly(), squirtleSkills);
         else if(randomNumber == 2)
-            playerPokemon = new Charizard(200, 40, new Wings(), charizardSkills);
+            enemyPokemon = new Charizard(200, 40, new Wings(), charizardSkills);
 
         System.out.println("배틀 시작!");
         System.out.println("=============");
 
+        charizardSkills.add(new Skill("Inferno",100));
         while(true) {
-            for (int i = 0; i < playerPokemon.skills.length; i++) {
-                System.out.println((i + 1) + "." + playerPokemon.skills[i].getName() + " (" + playerPokemon.skills[i].getDamage() + ")");
+            for (int i = 0; i < playerPokemon.skills.size(); i++) {
+                System.out.println((i + 1) + "." + playerPokemon.skills.get(i).getName() + " (" + playerPokemon.skills.get(i).getDamage() + ")");
             }
 
             System.out.print("Select skill : ");
