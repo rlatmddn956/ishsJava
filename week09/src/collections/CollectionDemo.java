@@ -7,8 +7,8 @@ public class CollectionDemo {
         ArrayList<Fruit> fruits = new ArrayList<>();
 //        System.out.println(fruits.isEmpty());  // true
 
-        fruits.add(new Fruit("Kiwi",3000));
-        fruits.add(new Fruit("Strawberry",2500));
+        fruits.add(new Fruit("Kiwi", 3000));
+        fruits.add(new Fruit("Strawberry", 2500));
 
 //        System.out.println(fruits.isEmpty());  // false
 
@@ -31,6 +31,5 @@ public class CollectionDemo {
         for(int i=0; i< fruits.size(); i++){
             System.out.println(fruits.get(i).getName() + "(단가 : " + fruits.get(i).getPrice() + ")");
         }
-
     }
 }
