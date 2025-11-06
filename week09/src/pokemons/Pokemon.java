@@ -36,7 +36,7 @@ public abstract class Pokemon {
     }
 
 
-    public abstract void attack(Pokemon target);
+    public abstract void attack(Pokemon target, int choice);
 
     public void recieveDamage(int damage){
         hp = hp-damage;

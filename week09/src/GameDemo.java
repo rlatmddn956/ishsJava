@@ -67,15 +67,19 @@ public class GameDemo {
         System.out.println("배틀 시작!");
         System.out.println("=============");
 
-        for(int i=0; i<playerPokemon.skills.length; i++){
-            System.out.println((i+1) + "." + playerPokemon.skills[i].getName() + " ("+ playerPokemon.skills[i].getDamage()+ ")");
+        while(true) {
+            for (int i = 0; i < playerPokemon.skills.length; i++) {
+                System.out.println((i + 1) + "." + playerPokemon.skills[i].getName() + " (" + playerPokemon.skills[i].getDamage() + ")");
+            }
+
+            System.out.print("Select skill : ");
+            int skillNumber = scanner.nextInt() - 1;
+
+            playerPokemon.attack(enemyPokemon, skillNumber);
+
+            if(enemyPokemon.isFainted() ||  playerPokemon.isFainted());
+            break;
         }
-
-        System.out.println("Select skill : ");
-        int skillNumber = scanner.nextInt() - 1;
-
-        enemyPokemon.setHp(enemyPokemon.getHp()-playerPokemon.skills[skillNumber].getDamage());
-        System.out.println(enemyPokemon.getName() + "의 체력은 " + enemyPokemon.getHp() + "이 남았습니다.");
 
 
 //        int turn = 1;
