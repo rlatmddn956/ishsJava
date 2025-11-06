@@ -7,8 +7,6 @@ import java.util.Scanner;
 
 public class GameDemo {
     public static void main(String[] args) {
-//        int randomNumber = (int)(Math.random() * 3); // 0 ~ 2
-//        System.out.println(randomNumber);
         Skill[] pikachuSkills = {
                 new Skill("nuzzie", 20),
                 new Skill("ThunderShock", 40),
@@ -57,7 +55,7 @@ public class GameDemo {
 
 
         int randomNumber = (int)(Math.random() * 3); // 0 ~ 2
-        Pokemon enemyPokemon;
+        Pokemon enemyPokemon = null;
         System.out.println("야생의 포켓몬스터 나타났습니다");
         if(randomNumber == 0)
             playerPokemon = new Pikachu(100, 27, new NoFly(), pikachuSkills);
@@ -72,6 +70,13 @@ public class GameDemo {
         for(int i=0; i<playerPokemon.skills.length; i++){
             System.out.println((i+1) + "." + playerPokemon.skills[i].getName() + " ("+ playerPokemon.skills[i].getDamage()+ ")");
         }
+
+        System.out.println("Select skill : ");
+        int skillNumber = scanner.nextInt() - 1;
+
+        enemyPokemon.setHp(enemyPokemon.getHp()-playerPokemon.skills[skillNumber].getDamage());
+        System.out.println(enemyPokemon.getName() + "의 체력은 " + enemyPokemon.getHp() + "이 남았습니다.");
+
 
 //        int turn = 1;
 //        while(!p1.isFainted() && !c1.isFainted()){
